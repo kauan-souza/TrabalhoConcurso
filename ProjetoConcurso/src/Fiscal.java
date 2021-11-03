@@ -1,4 +1,4 @@
-public class Fiscal extends Pessoa {
+public class Fiscal extends Pessoa implements Dominio{
 
     private String agencia;
 
@@ -54,5 +54,10 @@ public class Fiscal extends Pessoa {
 
     public String getPix() {
         return pix;
+    }
+
+    @Override
+    public Object getIid() {
+        return getCpf();
     }
 }

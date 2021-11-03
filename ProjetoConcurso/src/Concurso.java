@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Concurso {
+public class Concurso implements Dominio{
 
     private LocalDate dataHora;
 
@@ -65,5 +65,10 @@ public class Concurso {
 
     public void setParticipante(List<Concursado> participante) {
         this.participantes = participante;
+    }
+
+    @Override
+    public Object getIid() {
+        return numeroIdentificador;
     }
 }

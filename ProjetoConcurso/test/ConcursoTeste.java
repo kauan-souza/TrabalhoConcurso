@@ -45,7 +45,6 @@ public class ConcursoTeste {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("participante ja cadastrado");
 
-
         LocalDate dataConcurso = LocalDate.now();
         Concurso concurso = new Concurso(dataConcurso, "procempa", "av ipiranga", 1);
 

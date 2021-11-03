@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Concursado extends Pessoa {
+public class Concursado extends Pessoa implements Dominio {
 
     List<SituacaoConcurso> concursos;
 
@@ -11,6 +11,17 @@ public class Concursado extends Pessoa {
         addConcurso(concurso);
         validar();
     }
+    public List<SituacaoConcurso> reprovados(){
+
+        List <SituacaoConcurso> reprovados = new ArrayList<>();
+        for (SituacaoConcurso situacao : concursos){
+            if (situacao.getSituacao() == Situacao.REPROVADO){
+                reprovados.add(situacao);
+            }
+        }
+        return reprovados;
+    }
+
     public void addConcurso(SituacaoConcurso novoConcurso){
         this.concursos.add(novoConcurso);
     }
@@ -39,6 +50,10 @@ public class Concursado extends Pessoa {
         return concursos;
     }
 
+    @Override
+    public Object getIid() {
+        return getCpf();
+    }
 }
 
 
